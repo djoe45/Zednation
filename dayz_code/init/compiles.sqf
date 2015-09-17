@@ -3,7 +3,7 @@
 */
 //Player only
 if (!isDedicated) then {
-	_config = 	configFile >> "CfgLoot";
+	_config = 	missionconfigFile >> "CfgLoot";
 	_config1 = 	configFile >> "CfgMagazines" >> "FoodEdible";
 	_config2 = 	configFile >> "CfgWeapons" >> "Loot";
 
@@ -281,7 +281,7 @@ if (!isDedicated) then {
 			dayz_lastCheckBit = time;
 			[player,15,false,(getPosATL player)] spawn player_alertZombies;
 		};
-		if (_dikCode in actionKeys "User20" and (time - dayz_lastCheckBit > 5)) then {
+		if (_dikCode == 0x06 and (time - dayz_lastCheckBit > 5)) then {
 			dayz_lastCheckBit = time;
 			_nill = execvm "\z\addons\dayz_code\actions\playerstats.sqf";
 		};
@@ -295,6 +295,18 @@ if (!isDedicated) then {
 					[] spawn HandFlashLight_monitor;
 				};
 			};
+		};
+		if (_dikCode == 0x06) then { //5
+		   if (soundVolume != 1) then 
+		   {
+		   1 fadeSound 1;
+			titleText ["Your sound has returned to normal.", "PLAIN"];
+		   }
+			else
+		   {
+			 1 fadeSound 0.4;
+			 titleText ["Your sound has been lowered.", "PLAIN"];
+		   };
 		};
 		/*
 		if (_dikCode in actionKeys "IngamePause") then {
@@ -507,4 +519,6 @@ if (!isDedicated) then {
 	//Start Dynamic Weather
 	execVM "\z\addons\dayz_code\external\DynamicWeatherEffects.sqf";
 	
+	//GroupManagement
+	["InitializePlayer", [player]] call BIS_fnc_dynamicGroups;
 	initialized = true;

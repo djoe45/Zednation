@@ -384,7 +384,7 @@ if(!isDedicated) then {
 	dayz_bodyMonitor = [];
 	dayz_flyMonitor = [];		//used for monitor flies
 	
-	dayz_baseTypes = 		getArray (configFile >> "CfgBuildingLoot" >> "Default" >> "zombieClass");
+	dayz_baseTypes = 		getArray (missionconfigFile >> "CfgBuildingLoot" >> "Default" >> "zombieClass");
 	
 	//temperature variables
 	dayz_temperatur 		= 	36;		//TeeChange
@@ -448,7 +448,7 @@ if(!isDedicated) then {
 	dayzDebug = false;
 	dayzState = -1;
 	dz_debugmonitor =		false;
-	
+	dayz_hasFire = 			objNull;
 	//uiNamespace setVariable ['DAYZ_GUI_display',displayNull];
 	//if (uiNamespace getVariable ['DZ_displayUI', 0] == 2) then {
 	//	dayzDebug = true;

@@ -31,14 +31,14 @@ class cfgGame {
 
 	PlayerStartKit[] = {
 		{{"U_C_Citizen_clothes1","U_C_Citizen_clothes2","U_C_Citizen_clothes3","U_B_Guerilla2_2_srv","U_B_Guerilla2_3_srv"}, {"ItemBandage"}},
-		{"V_Rangemaster_belt", {"RH_12Rnd_45cal_usp","RH_12Rnd_45cal_usp","ItemBandage","ItemPainkiller","HandFlashlight","acc_lampflashlight","Battery_mag"}},
+		{"V_Rangemaster_belt", {"16Rnd_9x21_Mag","16Rnd_9x21_Mag","ItemBandage","ItemPainkiller","HandFlashlight","acc_lampflashlight","Battery_mag"}},
 		{{"B_FieldPack_khk"}, {}},
 		"",
 		{"G_Sport_BlackWhite", "G_Sport_Blackyellow", "G_Sport_Greenblack", "G_Sport_Checkered", "G_Sport_Red"},
-		"",
-		{{"RH_usp", ""}, "RH_12Rnd_45cal_usp"},
-		{{"", "", ""}, {}, ""},
+		"Binocular",
+		{{"hgun_P07_F", "hgun_Rook40_F"}, {}, "16Rnd_9x21_Mag"},
+		{{"", "", "hgun_PDW2000_F"}, {}, ""},
 		{"", {}, ""},
-		{"itemMap"}
+		{}
 	};
 };

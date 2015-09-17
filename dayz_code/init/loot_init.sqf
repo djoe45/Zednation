@@ -2,7 +2,7 @@ private["_cfgCount","_config","_i","_itemChances","_itemCount","_weighted","_j",
 dayz_CBLChances = [];
 dayz_CBLBase = [];
 
-_config = configFile >> "CfgBuildingLoot";
+_config = missionconfigFile >> "CfgBuildingLoot";
 for "_i" from 0 to ((count _config) - 1) do {
 	_classname = configName (_config select _i);
 	_itemChances = [] + getArray (_config >> _classname >> "ItemChance");
@@ -29,7 +29,7 @@ for "_i" from 0 to ((count _config) - 1) do {
 
 dayz_CLChances = [];
 dayz_CLBase = [];
-_config = configFile >> "cfgLoot";
+_config = missionconfigFile >> "cfgLoot";
 for "_i" from 0 to ((count (_config)) - 1) do {
 	_itemChances = (getArray (_config select _i)) select 1;
 	_weighted = [];
@@ -48,8 +48,8 @@ for "_i" from 0 to ((count (_config)) - 1) do {
 private["_i","_type","_config","_canZombie","_canLoot"];
 dayz_ZombieBuildings = [];
 dayz_LootBuildings = [];
-for "_i" from 0 to (count (configFile >> "CfgBuildingLoot") - 1) do {
-	_type = (configFile >> "CfgBuildingLoot") select _i;
+for "_i" from 0 to (count (missionconfigFile >> "CfgBuildingLoot") - 1) do {
+	_type = (missionconfigFile >> "CfgBuildingLoot") select _i;
 	_canZombie = 	getNumber (_type >> "zombieChance") > 0;
 	_canLoot = 		getNumber (_type >> "lootChance") > 0;
 	if(_canZombie) then {

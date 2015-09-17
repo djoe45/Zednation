@@ -1,7 +1,7 @@
 private["_obj","_type","_config","_canLoot","_unitTypes","_min","_max","_num","_zombieChance","_rnd","_noPlayerNear","_position","_clean","_positions","_iPos","_nearBy","_nearByPlayer"];
 _obj = _this select 0;
 _type = 		typeOf _obj;
-_config = 		configFile >> "CfgBuildingLoot" >> _type;
+_config = 		missionconfigFile >> "CfgBuildingLoot" >> _type;
 _canLoot = 		isClass (_config);
 
 if (dayz_maxCurrentZeds > dayz_maxZeds) exitwith {};
@@ -16,7 +16,7 @@ if (_canLoot) then {
 //Walking Zombies
 	//_num = round(random _max) min _min;
 	_num = round(random _max) max _min;
-	_config = 		configFile >> "CfgBuildingLoot" >> _type;
+	_config = 		missionconfigFile >> "CfgBuildingLoot" >> _type;
 //Get zombie class
 	_zombieChance =	getNumber (_config >> "zombieChance");
 	_rnd = random 1;

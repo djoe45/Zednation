@@ -44,9 +44,9 @@ for "_i" from 0 to (count _cansGear) - 1 do {
 		sleep 6;
 
 		dayzSetFuel = [_vehicle,_newFuel];
-		dayzSetFuel spawn local_setFuel;
+		[[_vehicle, _newFuel],"MP_SetFuel"] spawn BIS_fnc_MP;
 		publicVariable "dayzSetFuel";
-
+		
 		cutText [format[localize "str_player_05",_nameType,_canSize], "PLAIN DOWN"];
 		sleep 1;
 

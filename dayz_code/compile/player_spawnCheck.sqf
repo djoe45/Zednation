@@ -120,7 +120,7 @@ if (_nearbyCount < 1) exitwith
 
 {
 	_type = typeOf _x;
-	_config = 		configFile >> "CfgBuildingLoot" >> _type;
+	_config = 		missionconfigFile >> "CfgBuildingLoot" >> _type;
 	_canLoot = 		isClass (_config);
 	_dis = _x distance player;
 	

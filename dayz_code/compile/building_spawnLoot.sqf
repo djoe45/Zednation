@@ -2,7 +2,7 @@
 private["_obj","_type","_config","_configPos","_isBuildingPos","_buildingPos","_checkPos","_isOk","_iPos","_nearBy","_itemType","_itemTypes","_itemChances","_lootChance","_weights","_cntWeights","_index","_canLoot","_isObjectHolder","_holderType","_zPos"];
 _obj = 			_this select 0;
 _type = 		typeOf _obj;
-_config = 		configFile >> "CfgBuildingLoot" >> _type;
+_config = 		missionconfigFile >> "CfgBuildingLoot" >> _type;
 _configPos =	[] + getArray (_config >> "lootPos");
 _isBuildingPos = getNumber (_config >> "isBuildingPos");
 _buildingPos = [];

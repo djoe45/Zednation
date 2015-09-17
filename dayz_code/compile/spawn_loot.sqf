@@ -9,7 +9,7 @@ _fnc_SpawnWeapon = {
 	};
 };
 _fnc_SelectType = {
-	_itemTypes = [] + ((getArray (configFile >> "cfgLoot" >> _this)) select 0);
+	_itemTypes = [] + ((getArray (missionconfigFile >> "cfgLoot" >> _this)) select 0);
 	_index = dayz_CLBase find _iClass;
 	_weights = dayz_CLChances select _index;
 	_cntWeights = count _weights;
@@ -45,7 +45,7 @@ switch (_iClass) do {
 	
 		
 		//Item is food, add random quantity of cans along with an item (if exists)
-		_itemTypes = [] + ((getArray (configFile >> "cfgLoot" >> _iClass)) select 0);
+		_itemTypes = [] + ((getArray (missionconfigFile >> "cfgLoot" >> _iClass)) select 0);
 		_index = dayz_CLBase find _iClass;
 		_weights = dayz_CLChances select _index;
 		_cntWeights = count _weights;

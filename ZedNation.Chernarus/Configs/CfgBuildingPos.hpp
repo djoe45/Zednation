@@ -306,11 +306,6 @@
 		zombieChance = 0.3;
 		maxRoaming = 3;
 	}; // Qty: 283
-	class HouseRoaming: Residential {
-		lootChance = 0.5;
-		zombieChance = 0.2;
-		maxRoaming = 2;
-	};
 	class FarmRoaming: Farm {
 		lootChance = 0.3;
 		zombieChance = 0.4;

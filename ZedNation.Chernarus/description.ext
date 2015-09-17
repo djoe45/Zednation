@@ -1,0 +1,73 @@
+﻿respawn = "BASE";
+respawndelay = 5;
+respawnButton = 0;
+onLoadMission= "";
+OnLoadIntro = "";
+author = "Djoe45 | SteelRat";
+onLoadName = "ZedNation";
+OnLoadIntroTime = False;
+OnLoadMissionTime = False;
+disabledAI = true;
+disableChannels[]={0,3,6,2};
+enableItemsDropping = 0;
+briefing = 0;
+debriefing= 0;
+joinUnassigned = 0; // By default a new player is not auto assigned a free playable slot in the mission lobby in Multiplayer. Set it to 0/false to make him auto assigned to the side with least players
+//onPauseScript = "\z\addons\dayz_code\compile\player_onPause.sqf";
+onPauseScript = "Block.sqf";
+
+loadScreen = "\z\addons\dayz_code\gui\ZedNation_background.paa";
+
+class Header
+{
+	gameType = Sandbox;
+	minPlayers = 1;
+	maxPlayers = 100;
+};
+
+allowFunctionsLog = 1;
+enableDebugConsole = 1;
+allowFunctionsRecompile = 1;
+aiKills = 1;
+diagRadio = 1;
+diagHit = 1;
+
+class mARMADebug {
+    // Will report total map objects every 60 seconds
+    class MapObjects {
+        name = "Objects";
+        code = "count allMissionObjects 'All'";
+        interval = 60;
+    };
+
+    // Will report ingame players every 60 seconds
+    class Players {
+        name = "Players";
+        code = "{isPlayer _x} count playableUnits";
+        interval = 10;
+    };
+
+    // Returns the mission name every 60 seconds
+    class MissionName {
+        name = "Mission Name";
+        code = "MissionName";
+        interval = 60;
+    };
+
+    // Returns the world name every 60 seconds
+    class WorldName {
+        name = "World Name";
+        code = "WorldName";
+        interval = 60;
+    };
+	
+	class ServerFps {
+    name = "FPS"; // Name of the metric
+    code = "diag_fps"; // Code to run which returns a number or string
+    interval = 1; // How often the metric is read
+	};
+};
+#include "infiSTAR_AdminMenu.hpp"
+#include "Configs\CfgGame.hpp"
+#include "Configs\CfgVehiclesSpawner.hpp"
+#include "Configs\CfgBuildingLoot.hpp"

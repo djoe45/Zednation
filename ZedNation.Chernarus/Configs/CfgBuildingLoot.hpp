@@ -493,7 +493,11 @@ class CfgBuildingLoot {
 			
 		};
 	};
-	
+	class HouseRoaming: Residential {
+		minRoaming = 1;
+		maxRoaming = 3;
+		zombieChance = 0.6;
+	};
 	#include "CfgBuildingPos.hpp"
 	#include "CfgFurniturePos.hpp"
 };
